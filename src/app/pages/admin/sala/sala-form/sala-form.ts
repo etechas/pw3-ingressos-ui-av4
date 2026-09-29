@@ -1,9 +1,11 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { ContainerComponent } from '../../../../shared/components/container/container';
-import {FormBuilder, ReactiveFormsModule} from '@angular/forms';
-
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { SalaService } from '../../../../core/services/sala.service';
+import type { Sala } from '../../../../core/models';
 
 @Component({
   selector: 'app-sala-form',
@@ -12,8 +14,11 @@ import {FormBuilder, ReactiveFormsModule} from '@angular/forms';
   templateUrl: './sala-form.html',
   styleUrl: './sala-form.css'
 })
-export class SalaFormComponent {
+export class SalaFormComponent implements OnInit {
   private fb = inject(FormBuilder);
+  private salaService = inject(SalaService);
+  private route = inject(ActivatedRoute);
+  private router = inject(Router);
 
   formSala = this.fb.group({
     id: [0],
@@ -21,8 +26,20 @@ export class SalaFormComponent {
     preco: [0]
   });
 
-  save(): void{
-    console.log(this.formSala.value);
+  ngOnInit(): void {
+    const id = this.route.snapshot.params['id'];
+    if (id) {
+      this.salaService.buscarPorId(id).subscribe(sala => {
+        this.formSala.patchValue(sala);
+      });
+    }
   }
 
+  save(): void {
+    const sala = this.formSala.value as Sala;
+    this.salaService.salvar(sala).subscribe({
+      next: () => this.router.navigate(['/salas']),
+      error: (err) => console.error('Erro ao salvar sala', err)
+    });
+  }
 }
