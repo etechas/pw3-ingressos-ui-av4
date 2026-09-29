@@ -4,5 +4,5 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 ## Nomes
 
-
+Matheus Rocha Alves e Samuel Lopes
 

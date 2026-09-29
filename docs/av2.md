@@ -77,7 +77,7 @@ Crie o arquivo `sala.service.ts` na pasta de serviços, seguindo a estrutura vis
 ### 3.2 Listagem de salas (`src/app/pages/admin/sala/sala-lista/`)
 Na listagem (`sala-lista.ts` e `sala-lista.html`):
 - No TypeScript, injete `SalaService` e declare a propriedade observável de `salas`.
-- Carregue os dados chamando o método de listagem do serviço na inicialização do componente.
+- Carregue os dados cha maimando o método de listagem do serviço na inicialização do componente.
 - No HTML, retire o comentário do laço `@for (item of (salas | async); track item.id)` para renderizar a tabela com os registros recebidos da API.
 - No botão **Editar**, implemente a navegação para o formulário passando o identificador da sala.
 - No botão **Excluir**, chame o método de exclusão do serviço. Ao concluir a exclusão com sucesso, atualize a listagem.
