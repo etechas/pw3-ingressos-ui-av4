@@ -1,9 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { ContainerComponent } from '../../../../shared/components/container/container';
-import { RouterLink } from "@angular/router";
+import { ActivatedRoute, RouterLink } from "@angular/router";
+import { Observable, of } from 'rxjs';
+import { Sala } from '../../../../core/models';
+import { SalaService } from '../../../../core/services/sala.service';
+
 
 
 @Component({
@@ -14,5 +18,8 @@ import { RouterLink } from "@angular/router";
   styleUrl: './sala-lista.css'
 })
 export class SalaListaComponent {
+  sala: Observable<Sala> = of();
+  private Salaservice = inject(SalaService);
+  private route = inject(ActivatedRoute);
   
 }
