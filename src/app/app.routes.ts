@@ -15,6 +15,10 @@ export const routes: Routes = [
     {path: 'salas/novo', component: SalaFormComponent},
    
     {path:'not-found', component: NotFoundComponent},
-    {path:'**', component: NotFoundComponent}
+    {path:'**', component: NotFoundComponent},
+
+    {path: 'salas/:id/editar', component: SalaFormComponent}
+
+
 
 ];

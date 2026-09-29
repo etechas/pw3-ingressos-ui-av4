@@ -26,4 +26,6 @@ export class DetalhesComponent implements OnInit {
     const id = this.route.snapshot.params['id'];
     this.filme = this.filmeService.buscarSessoesPorFilmeId(id);
   }
+
+  
 }
