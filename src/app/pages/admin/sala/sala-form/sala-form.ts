@@ -3,6 +3,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { ContainerComponent } from '../../../../shared/components/container/container';
 import {FormBuilder, ReactiveFormsModule} from '@angular/forms';
+import { SalaService } from '../../../../core/services/sala.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -14,6 +16,8 @@ import {FormBuilder, ReactiveFormsModule} from '@angular/forms';
 })
 export class SalaFormComponent {
   private fb = inject(FormBuilder);
+  private salaService = inject(SalaService)
+  private route = inject(ActivatedRoute);
 
   formSala = this.fb.group({
     id: [0],
@@ -23,6 +27,7 @@ export class SalaFormComponent {
 
   save(): void{
     console.log(this.formSala.value);
+    this.salaService.salvar(this.formSala.value, this.route)
   }
 
 }

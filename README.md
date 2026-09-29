@@ -4,5 +4,6 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 ## Nomes
 
-
+Marina Estrela Palma
+Thiago Cavalcante Lopes
 

@@ -48,7 +48,7 @@ A implementação deve seguir os mesmos padrões de arquitetura e codificação 
 
 ## 2. Endpoints da API back-end
 
-A API está rodando na rede interna em `http://192.168.2.159:8090/salas`. Os endpoints disponíveis para a entidade Sala são:
+A API está rodando na rede interna em `http://192.168.2.159:8080/salas`. Os endpoints disponíveis para a entidade Sala são:
 
 | Método | Endpoint | Descrição | Corpo da requisição (payload) | Retorno HTTP |
 | :--- | :--- | :--- | :--- | :--- |
