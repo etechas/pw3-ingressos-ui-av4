@@ -2,7 +2,7 @@
   <div class="form-container">
     <h2>Registrar Sala</h2>
 
-    <form [formGroup]="formSala">
+    <form [formGroup]="fSala" (ngsubmit)="save()">
       <div class="form-section">
         <div class="form-group">
           <label for="nome">Nome:</label>
@@ -17,6 +17,10 @@
         <button mat-raised-button color="primary" type="submit" (click)="save()">
           <mat-icon>save</mat-icon> Gravar
         </button>
+        <button mat-raised-button color="primary" type="button" (click)="cancel()">
+          <mat-icon>cancel</mat-icon> Cancelar
+        </button>
+        
       </div>
     </form>
   </div>

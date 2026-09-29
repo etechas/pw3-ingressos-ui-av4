@@ -1,5 +1,5 @@
 export interface Sala {
-  id: number;
+  id?: number;
   nome?: string;
   preco?: number;
 }
