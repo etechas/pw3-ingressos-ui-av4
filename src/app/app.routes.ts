@@ -13,8 +13,11 @@ export const routes: Routes = [
 	
     {path: 'salas', component: SalaListaComponent},
     {path: 'salas/novo', component: SalaFormComponent},
+    {path: 'salas/:id/editar', component: SalaFormComponent},
    
     {path:'not-found', component: NotFoundComponent},
     {path:'**', component: NotFoundComponent}
+    
+
 
 ];
