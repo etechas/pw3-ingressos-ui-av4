@@ -18,8 +18,17 @@ import { Observable, of } from 'rxjs';
   styleUrl: './sala-lista.css'
 })
 export class SalaListaComponent {
-  sala: Observable<Sala> = of();
-  private filmeService = inject(SalaService);
 
+  salas: Observable<Sala[]> = of([]);
+  private salaService = inject(SalaService);
 
+  ngOnInit(): void {
+    this.salas = this.salaService.listar();
+  }
+
+  excluir(id: number): void {
+    this.salaService.excluir(id).subscribe(() => {
+      this.salas = this.salaService.listar();
+    });
+  }
 }

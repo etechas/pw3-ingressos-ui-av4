@@ -29,10 +29,10 @@
               <button mat-raised-button color="primary">
                 <mat-icon>movie</mat-icon> Sessões
               </button>
-              <button mat-raised-button color="accent" routerLink="/sessao/{{item.id}}/sala">
+              <button mat-raised-button color="accent" routerLink="/salas/{{item.id}}/editar">
                 <mat-icon>edit</mat-icon> Editar
               </button>
-              <button mat-raised-button color="warn" routerLink="/sessao/{{item.id}}/sala">
+              <button mat-raised-button color="warn" (click)="excluir(item.id)">
                 <mat-icon>delete</mat-icon> Excluir
               </button>
             </td>
