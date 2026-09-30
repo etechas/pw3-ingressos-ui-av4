@@ -10,12 +10,22 @@
 
     <div class="table-container">
       <table class="data-table">
-        <thead>
-          <tr>
+        <tr><th>ID </th>
             <th>Nome</th>
             <th>Preço</th>
             <th>Ações</th>
+        </tr>
+        <thead>
+          <tr>
+            <td>{{item.id}}</td>
+            <td>{{item.nome}}</td>
+            <td>{{item.preco}}</td>
+            <td><button (click) = "Editar(item.id)">Editar</button>
+                <button (click) = "Excluir(item.id)">Excluir</button>
+            </td>
+
           </tr>
+          {}
         </thead>
         <tbody>
          <!-- 

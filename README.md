@@ -1,8 +1,3 @@
-# Pw3IngressoV2Ui
-
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.3.
-
-## Nomes
-
+Matheus Guerino da Silva RM: 241533 e Victor Matheus Silva Sisnande RM: 241037
 
 
