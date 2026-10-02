@@ -4,5 +4,6 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 ## Nomes
 
-
+Kamila Aparecida Da Silva Morais RM: 241025
+Kevin Santos Leão RM: 241024
 

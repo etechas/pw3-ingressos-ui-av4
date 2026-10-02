@@ -13,3 +13,7 @@ export const appConfig: ApplicationConfig = {
     provideToastr({ positionClass: 'toast-top-right', progressBar: true })
   ]
 };
+
+export const routes: Routes = [
+  {path: }
+]

@@ -10,10 +10,14 @@ export const routes: Routes = [
     {path: '',component: HomeComponent},
     {path:'filmes/em-cartaz', component: EmCartazComponent},
     {path:'filmes/detalhes/:id', component: DetalhesComponent},
-	
+    //Rota de Listagem
     {path: 'salas', component: SalaListaComponent},
+    //Rota de cadastro
     {path: 'salas/novo', component: SalaFormComponent},
-   
+    //Rota de edição
+    {path: 'salas/:id/editar', component: SalaFormComponent},
+    {path: 'salas/:id', component: SalaFormComponent},
+
     {path:'not-found', component: NotFoundComponent},
     {path:'**', component: NotFoundComponent}
 

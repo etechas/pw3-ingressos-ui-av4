@@ -14,6 +14,21 @@ import {FormBuilder, ReactiveFormsModule} from '@angular/forms';
 })
 export class SalaFormComponent {
   private fb = inject(FormBuilder);
+  private salaService = inject(SalaService);
+  private rota = inject(ActivatedRoute);
+  private router = inject(Router);
+
+  ngOnInit(): void {
+    const idSala = this.route.snapshot.paramMap.get('id');
+      if (idSala) {
+        const id = Number(idSala);
+        this.salaService.buscarSalaPorId(id).subscribe({
+        next: (sala) => {
+        this.formSala.patchValue(sala);
+        }
+      })
+    }
+  }
 
   formSala = this.fb.group({
     id: [0],
@@ -22,7 +37,8 @@ export class SalaFormComponent {
   });
 
   save(): void{
-    console.log(this.formSala.value);
+    this.salaService.salvarSala(sala).subscribe;
+    this.router.navigate({'/salas'});
   }
 
 }
