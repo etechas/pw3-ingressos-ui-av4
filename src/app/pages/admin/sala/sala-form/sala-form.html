@@ -2,7 +2,7 @@
   <div class="form-container">
     <h2>Registrar Sala</h2>
 
-    <form [formGroup]="formSala">
+    <form [formGroup]="formSala" (ngSubmit)="save()">
       <div class="form-section">
         <div class="form-group">
           <label for="nome">Nome:</label>
@@ -14,10 +14,13 @@
           <input id="preco" type="number" name="preco" class="form-control" min="0.01" step="0.01" formControlName="preco"/>
         </div>
 
-        <button mat-raised-button color="primary" type="submit" (click)="save()">
-          <mat-icon>save</mat-icon> Gravar
+        <button type="submit">Salvar</button>
+
+        <button type="button" (click)="router.navigate(['/salas'])">
+            Cancelar
         </button>
       </div>
     </form>
   </div>
 </app-container>
+
